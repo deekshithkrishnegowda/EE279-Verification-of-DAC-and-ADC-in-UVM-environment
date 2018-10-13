@@ -1,0 +1,157 @@
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'Fedora release 27 (Twenty Seven)' is not supported on 
+  'x86_64' officially, assuming linux compatibility by default. Set 
+  VCS_ARCH_OVERRIDE to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '4.16.7-200.fc27.x86_64' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Sun May 13 17:53:01 2018
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[UNK_COMP_ARG] Unknown compile time plus argument used
+  Unknown compile time plus argument 'ntb_random_seed=value' is ignored.
+
+ + use `+plusarg_save' to bind in runtime plusargs;
+ + use `+plusarg_ignore' to suppress this message.
+The design hasn't changed and need not be recompiled. 
+If you really want to, delete file simv.daidir/.vcs.timestamp and
+run VCS again.
+
+
+Note-[RT_BS] Larger stack needed
+  Note: Bumping stack limit from 8192 to 8200 Kbytes.
+
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  May 13 17:53 2018
+----------------------------------------------------------------
+UVM-1.1d.VCS
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+---------------------------------------------------------------------
+Name                          Type                        Size  Value
+---------------------------------------------------------------------
+uvm_test_top                  test                        -     @466 
+  my_environment              environment                 -     @474 
+    my_agent                  agent                       -     @490 
+      my_bfm                  bfm                         -     @774 
+        analysis_fifo         uvm_tlm_analysis_fifo #(T)  -     @832 
+          analysis_export     uvm_analysis_imp            -     @876 
+          get_ap              uvm_analysis_port           -     @867 
+          get_peek_export     uvm_get_peek_imp            -     @849 
+          put_ap              uvm_analysis_port           -     @858 
+          put_export          uvm_put_imp                 -     @840 
+        analysis_fifo_pready  uvm_analysis_port           -     @885 
+        bfm_port_sb           uvm_analysis_port           -     @894 
+        rsp_port              uvm_analysis_port           -     @791 
+        seq_item_port         uvm_seq_item_pull_port      -     @782 
+      my_driver               driver                      -     @625 
+        rsp_port              uvm_analysis_port           -     @642 
+        seq_item_port         uvm_seq_item_pull_port      -     @633 
+      my_monitor_adc0         monitor_adc0                -     @808 
+      my_monitor_adc1         monitor_adc1                -     @824 
+      my_monitor_dac0         monitor_dac0                -     @800 
+      my_monitor_dac1         monitor_dac1                -     @816 
+      my_sequencer            sequencer                   -     @651 
+        rsp_export            uvm_analysis_export         -     @659 
+        seq_item_export       uvm_seq_item_pull_imp       -     @765 
+        arbitration_queue     array                       0     -    
+        lock_queue            array                       0     -    
+        num_last_reqs         integral                    32    'd1  
+        num_last_rsps         integral                    32    'd1  
+    my_scoreboard             scoreboard                  -     @482 
+    my_virtual_sequencer      virtual_sequencer           -     @498 
+      rsp_export              uvm_analysis_export         -     @506 
+      seq_item_export         uvm_seq_item_pull_imp       -     @612 
+      arbitration_queue       array                       0     -    
+      lock_queue              array                       0     -    
+      num_last_reqs           integral                    32    'd1  
+      num_last_rsps           integral                    32    'd1  
+---------------------------------------------------------------------
+
+UVM_INFO /apps/synopsys/VCSMX_NEW/etc/uvm-1.1/base/uvm_objection.svh(1268) @ 2822: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+ 
+ IF PADDR > 32'h ffff_0000 -> SLAVE1 ,DAC0 & ADC0
+ 
+ IF PADDR < 32'h ffff_0000 -> SLAVE2 ,DAC1 & ADC1 
+ 
+PRDATA from ADC 54480000
+PRDATA from ADC 7af40000
+PRDATA from ADC 52f00000
+PRDATA from ADC f26c0000
+PRDATA from ADC 16680000
+PRDATA from ADC 11880000
+PRDATA from ADC d8980000
+PRDATA from ADC d47c0000
+PRDATA from ADC e5000000
+PRDATA from ADC 89040000
+PRDATA from ADC 12300000
+PRDATA from ADC dbf80000
+PRDATA from ADC 00280000
+PRDATA from ADC 50840000
+PRDATA from ADC 27780000
+========================
+PWDATA from DAC  5447b1c0
+PWDATA from DAC  7af3c125
+PWDATA from DAC  52f05596
+PWDATA from DAC  f26bbf25
+PWDATA from DAC  16665252
+PWDATA from DAC  118607f0
+PWDATA from DAC  d899b092
+PWDATA from DAC  d47c43ef
+PWDATA from DAC  e4fe2592
+PWDATA from DAC  89053ac7
+PWDATA from DAC  12307721
+PWDATA from DAC  dbf8d7ee
+PWDATA from DAC  002739cf
+PWDATA from DAC  50834860
+PWDATA from DAC  27783f6a
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    3
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVMTOP]     1
+$finish called from file "/apps/synopsys/VCSMX_NEW/etc/uvm-1.1/base/uvm_root.svh", line 438.
+$finish at simulation time                 2822
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2822 ns
+CPU Time:      0.300 seconds;       Data structure size:   0.2Mb
+Sun May 13 17:53:02 2018

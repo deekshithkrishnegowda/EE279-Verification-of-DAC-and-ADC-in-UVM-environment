@@ -1,0 +1,34 @@
+NAME : Deekshith Krishnegowda - 012417080
+	  Adeel Muzaffar         - 008070686
+
+1. 
+
+APB BFM : There is a two way communication between the driver and the BFM. The driver drives the messages to the BFM and the BFM drives the messages in accordance to APB protocol to the DUT. Then the BFM collects the PREADY signal from the DUT and passes it to driver. The driver blocks further randomization until PREADY is acknowledged. 
+
+The BFM is connected to 4 DUTS, 2 DAC and 2 ADC. The DAC gives analog Vout which is stored inside a queue. The queue is limited to 100 entries , so the user should make sure not to drive more than 100 values with PWRITE as high. The stored value is then given to ADC as input. 
+The decoding method which I have used in this BFM is 
+ 
+ IF PADDR > 32'h ffff_0000 -> SLAVE1 ,DAC0 & ADC0
+ 
+ IF PADDR < 32'h ffff_0000 -> SLAVE2 ,DAC1 & ADC1 
+
+
+There are 4 monitors which are associated with 4 DUTS with different interfaces for each of them. The monitor which is monitoring DACs will collect PWDATA and report it to scoreboard in a fork join manner. The monitors which is monitoring ADCs will collect PRDATA and inform it to scoreboard. 
+
+In order to make the BFM more reusable, array of interfaces could have been dropped from top module. But since I was dealing with less number of DUTs, I sticked with dropping 4 interfaces from top.
+
+The BFM operates in a similar fashion as APB. When PRESET is asserted, all values are signals are driven to zero.
+
+IDLE phase - PSEL,PWDATA,PWRITE is asserted.
+SETUP phase - the control signals remains unchanged while PENABLE is asserted.
+ACCESS PHASE - the data gets sampled when PREADY and PENABLE are both high. PENABLE is deasserted.
+
+2.
+ 
+BACKDOOR - In order to solve the hierachical path problem, I have used virtual sequence and virtual sequencer backdoor method in my test environment.
+
+3.
+
+SCOREBOARD - Either the monitors of slave 1 or slave 2 will be reporting to scoreboard. The reporting is done is fork join manner. Since ADC provides only first 18 bits of PRDATA, it is important that user should compare the first 18 bits of PWDATA and PRDATA. 
+
+

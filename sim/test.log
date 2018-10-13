@@ -1,0 +1,22 @@
+Command: vcs -sverilog -ntb_opts uvm-1.1 -timescale=1ns/1ns +ntb_random_seed=value \
++incdir+../package +incdir+../test +incdir+../top +incdir+../uvc ../top/top.sv -l \
+test.log
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Sun May 13 17:54:23 2018
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[UNK_COMP_ARG] Unknown compile time plus argument used
+  Unknown compile time plus argument 'ntb_random_seed=value' is ignored.
+
+ + use `+plusarg_save' to bind in runtime plusargs;
+ + use `+plusarg_ignore' to suppress this message.
+The design hasn't changed and need not be recompiled. 
+If you really want to, delete file simv.daidir/.vcs.timestamp and
+run VCS again.
+
